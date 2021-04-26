@@ -249,6 +249,10 @@ def detect(opt):
             # Stream results
             if view_img:
                 cv2.imshow(str(p), im0)
+                file_name = str(source) + '_' + str(frame) + '.txt'
+                # path_file_upload = r"C:\PycharmProjects\yolov5\runs\detect\{}\labels\{}\{}_{}".format(save_dir, s, source, frame)
+                if file_operation(bucket_name, file_name, txt_path + ".txt", None, 'upload'):
+                    print("Uploading file to S3 completed successfully!")
                 cv2.waitKey(1)  # 1 millisecond
 
             # Save results (image with detections)
@@ -302,6 +306,7 @@ if __name__ == '__main__':
     parser.add_argument('--hide-conf', default=False, action='store_true', help='hide confidences')
     opt = parser.parse_args()
     print(opt)
+
     check_requirements(exclude=('pycocotools', 'thop'))
 
     s3_resource = boto3.resource('s3', endpoint_url=END_POINT_URL,
@@ -317,12 +322,11 @@ if __name__ == '__main__':
                              region_name='US')
 
     bucket_name = 'detection'
-    file_name = r'test.json'
-    path_file_upload = r'C:\PycharmProjects\cortxHackton\upload\test.json'
-    assert os.path.isfile(path_file_upload)
-    with open(path_file_upload, "r") as f:
-        pass
-    path_file_download = r'download\test.json'
+
+    # assert os.path.isfile(path_file_upload)
+    # with open(path_file_upload, "r") as f:
+    #     pass
+    path_file_download = r'download\test.txt'
     path_save = ''
 
     if bucket_operation(bucket_name, None, 'list'):
