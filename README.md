@@ -1,5 +1,14 @@
 
+## Description
 
+This repository represents open-source detection methods with YOLOv5 at the edge (on camera), sending cloud storage and importing data.
+YOLO model trains on the COCO dataset and can detect up to 80 classes.
+With the help of this model, I detect objects on video frames and save the bounding boxes conditions in a text file, send them to the CORTX cloud, and store them there.
+
+
+<p align="center">
+   <img width="640" height="320" src="./results/output_last.gif">
+</p>
 
 
 ## Requirements
@@ -11,9 +20,10 @@ $ pip install -r requirements.txt
 
 ## Inference
 
-`detect.py` runs inference on a variety of sources, downloading models automatically from the [latest YOLOv5 release](https://github.com/ultralytics/yolov5/releases) and saving results to `runs/detect`.
+`detectAndSend.py` runs inference, downloading models automatically from the [latest YOLOv5 release](https://github.com/ultralytics/yolov5/releases) and saving results to `runs/detect`.
+
 ```bash
-$ python detect.py --source 0  # webcam
+$ python detectAndSend.py --source 0  # webcam
                             file.jpg  # image 
                             file.mp4  # video
                             path/  # directory
@@ -23,5 +33,9 @@ $ python detect.py --source 0  # webcam
 ```
 
 ```bash
-$ python detect.py --source data/images --weights yolov5s.pt --conf 0.25
+$ python detectAndSend.py  --source test.mp4 --weights yolov5s.pt --conf 0.25 --save-txt
+```
+
+## Future work
+
 
