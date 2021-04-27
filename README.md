@@ -3,7 +3,10 @@
 
 This repository represents open-source detection methods with YOLOv5 at the edge (on camera), sending cloud storage and importing data.
 YOLO model trains on the COCO dataset and can detect up to 80 classes.
-With the help of this model, I detect objects on video frames and save the bounding boxes conditions in a text file, send them to the CORTX cloud, and store them there.
+With the help of this model, I detect objects on video frames and save the bounding boxes in a text file, send them to the CORTX cloud, and store them there.\
+Next, I download the data from the CORTX storage and draw the bounding boxes on the original video. \
+NOTE: In Yolo, the coordinates are relative. Meaning that the annotations are written this way: \
+<object-class, x_center, y_center, width, height>
 
 The left top gif is the original film.\
 The right top gif is the yolo detection output.\
