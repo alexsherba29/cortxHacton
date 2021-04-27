@@ -48,5 +48,6 @@ $ python detectAndSend.py  --source test.mp4 --weights yolov5s.pt --conf 0.25 --
 ```
 
 ## Future work
-
+Add RTSP(Real Time Streaming Protocol)
+Improve the model
 
