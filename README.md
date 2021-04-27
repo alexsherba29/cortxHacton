@@ -8,6 +8,10 @@ Next, I download the data from the CORTX storage and draw the bounding boxes on 
 NOTE: In Yolo, the coordinates are relative. Meaning that the annotations are written this way: \
 <object-class, x_center, y_center, width, height>
 
+## Concept pitch
+can be found [here]().
+
+
 The left top gif is the original film.\
 The right top gif is the yolo detection output.\
 The center down gif is the output after import the data from the cloud.
