@@ -22,7 +22,7 @@ from matplotlib import pyplot as plt
 from botocore.exceptions import ClientError
 from boto3.s3.transfer import TransferConfig
 
-END_POINT_URL = 'http://uvo1baooraa1xb575uc.vm.cld.sr/'
+END_POINT_URL = 'http://uvo1baooraa1xb575uc.vm.cld.sr'
 A_KEY = 'AKIAtEpiGWUcQIelPRlD1Pi6xQ'
 S_KEY = 'YNV6xS8lXnCTGSy1x2vGkmGnmdJbZSapNXaSaRhK'
 
@@ -232,8 +232,11 @@ def detect(opt):
                     if save_txt:  # Write to file
                         xywh = (xyxy2xywh(torch.tensor(xyxy).view(1, 4)) / gn).view(-1).tolist()  # normalized xywh
                         line = (cls, *xywh, conf) if opt.save_conf else (cls, *xywh)  # label format
+                        file_name = str(source) + '_' + str(frame) + '.txt'
                         with open(txt_path + '.txt', 'a') as f:
                             f.write(('%g ' * len(line)).rstrip() % line + '\n')
+                        if file_operation(bucket_name, file_name, txt_path + ".txt", None, 'upload'):
+                            print("Uploading file to S3 completed successfully!")
 
                     if save_img or opt.save_crop or view_img:  # Add bbox to image
                         c = int(cls)  # integer class
@@ -270,7 +273,7 @@ def detect(opt):
                             h = int(vid_cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
                         else:  # stream
                             fps, w, h = 30, im0.shape[1], im0.shape[0]
-                            save_path += '.mp4'
+                        save_path += '.mp4'
                         vid_writer = cv2.VideoWriter(save_path, cv2.VideoWriter_fourcc(*'mp4v'), fps, (w, h))
                     vid_writer.write(im0)
 
@@ -329,7 +332,7 @@ if __name__ == '__main__':
     path_file_download = r'download\test.txt'
     path_save = ''
 
-    if bucket_operation(bucket_name, None, 'list'):
+    if bucket_operation(bucket_name, None, 'create'):
         print("Bucket creation completed successfully!")
 
     with torch.no_grad():
