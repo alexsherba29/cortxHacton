@@ -9,7 +9,7 @@ NOTE: In Yolo, the coordinates are relative. Meaning that the annotations are wr
 <object-class, x_center, y_center, width, height>
 
 ## Concept pitch
-can be found [here]().
+can be found [here](https://www.loom.com/share/4c0956c5851249db8119a0fdaa7f2d16).
 
 
 The left top gif is the original film.\
