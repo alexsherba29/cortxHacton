@@ -14,13 +14,14 @@ can be found [here]().
 
 The left top gif is the original film.\
 The right top gif is the yolo detection output.\
-The center down gif is the output after import the data from the cloud.
+The center down gif is the output after import the data from the cloud.\
+The last image show all the text files that i upload into CORTX cloud using S3 client Cyberduck.
 
 <p align="center">
    <img src="./gif/original.gif">
    <img src="./gif/yoloResults.gif">
+   <img src="./gif/image.png">
    <img src="./gif/outputAfterReceive.gif">
-   <img >
 </p>
 
 ## Requirements
@@ -28,6 +29,9 @@ The center down gif is the output after import the data from the cloud.
 Python 3.8 or later with all [requirements.txt](https://github.com/ultralytics/yolov5/blob/master/requirements.txt) dependencies installed, including `torch>=1.7`. To install run:
 ```bash
 $ pip install -r requirements.txt
+$ pip instll boto3
+$ pip instll logging
+$ pip instll botocore
 ```
 
 ## Inference
