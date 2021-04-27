@@ -7,8 +7,11 @@ With the help of this model, I detect objects on video frames and save the bound
 
 
 <p align="center">
-   <img width="640" height="320" src="./gif/original.gif">
+   <img src="./gif/original.gif">
+   <img src="./gif/yoloResults.gif">
+   <img src="./gif/outputAfterReceive.gif">
 </p>
+
 
 
 ## Requirements
