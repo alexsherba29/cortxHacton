@@ -20,6 +20,7 @@ The center down gif is the output after import the data from the cloud.
    <img src="./gif/original.gif">
    <img src="./gif/yoloResults.gif">
    <img src="./gif/outputAfterReceive.gif">
+   <img >
 </p>
 
 ## Requirements
