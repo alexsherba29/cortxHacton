@@ -36,10 +36,15 @@ $ pip instll botocore
 
 ## Inference
 
-`detectAndSend.py` runs inference, downloading models automatically from the [latest YOLOv5 release](https://github.com/ultralytics/yolov5/releases) and saving results to `runs/detect`.
+`detectAndSend.py` runs inference, downloading models automatically from the [latest YOLOv5 release](https://github.com/ultralytics/yolov5/releases) and saving results to `runs/detect`.\
+`downloadAndDraw.py` downloading automatically from the cloud and draw the results to into the original video.
 
 ```bash
 $ python detectAndSend.py  --source test.mp4 --weights yolov5s.pt --conf 0.25 --save-txt
+```
+NEXT
+```
+$ python downloadAndDraw.py
 ```
 
 ## Future work
