@@ -39,16 +39,6 @@ $ pip instll botocore
 `detectAndSend.py` runs inference, downloading models automatically from the [latest YOLOv5 release](https://github.com/ultralytics/yolov5/releases) and saving results to `runs/detect`.
 
 ```bash
-$ python detectAndSend.py --source 0  # webcam
-                            file.jpg  # image 
-                            file.mp4  # video
-                            path/  # directory
-                            path/*.jpg  # glob
-                            'https://youtu.be/NUsoVlDFqZg'  # YouTube video
-                            'rtsp://example.com/media.mp4'  # RTSP, RTMP, HTTP stream
-```
-
-```bash
 $ python detectAndSend.py  --source test.mp4 --weights yolov5s.pt --conf 0.25 --save-txt
 ```
 
